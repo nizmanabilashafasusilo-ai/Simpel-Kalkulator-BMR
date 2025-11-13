@@ -10,13 +10,13 @@ class ResultPage extends StatelessWidget {
     required this.result,
     required this.bmi,
     required this.information,
-    required this.gender, // 🔥 Tambahkan parameter gender
+    required this.gender, //Tambahkan parameter gender
   }) : super(key: key);
 
   final String result;
   final String bmi;
   final String information;
-  final String gender; // 🔥 Tambahkan variabel gender
+  final String gender; //Tambahkan variabel gender
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,6 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // 🔥 Tambahkan tampilan jenis kelamin
                   Text(
                     'Gender: $gender',
                     style: const TextStyle(
