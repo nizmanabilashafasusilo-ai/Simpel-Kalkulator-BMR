@@ -16,7 +16,7 @@ class BottomButton extends StatelessWidget {
         margin: const EdgeInsets.only(top: 10.0),
         // width: double.infinity,
         height: bottomContainerHeight,
-        color: bottomContainerColor,
+        color: const Color.fromARGB(255, 56, 72, 139),
         child: Center(child: Text(buttonTitle, style: buttonTextStyle)),
       ),
     );
