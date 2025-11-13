@@ -1,22 +1,24 @@
-// result_page.dart
-import 'package:bmr/component/bottom_button.dart';// import BottomButton
-import 'package:bmr/component/custom_card.dart';// import CustomCard  
-import 'package:bmr/constants.dart';// import constants
-import 'package:flutter/material.dart';// import Flutter material package
+import 'package:bmr/component/bottom_button.dart'; // import BottomButton
+import 'package:bmr/component/custom_card.dart'; // import CustomCard
+import 'package:bmr/constants.dart'; // import constants
+import 'package:flutter/material.dart'; // import Flutter material package
+
 // result page widget
 class ResultPage extends StatelessWidget {
   const ResultPage({
+    Key? key,
     required this.result,
     required this.bmi,
     required this.information,
-  });
+    required this.gender, // 🔥 Tambahkan parameter gender
+  }) : super(key: key);
 
   final String result;
   final String bmi;
   final String information;
+  final String gender; // 🔥 Tambahkan variabel gender
 
   @override
-  // build method
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('BMR RESULT')),
@@ -27,10 +29,11 @@ class ResultPage extends StatelessWidget {
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(15.0),
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.center,
               child: const Text(
                 'Your Result',
                 style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
             ),
           ),
@@ -42,9 +45,19 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // 🔥 Tambahkan tampilan jenis kelamin
+                  Text(
+                    'Gender: $gender',
+                    style: const TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white70,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                   Text(result, style: resultTextStyle),
                   Text(bmi, style: bmiTextStyle),
-                  Text('kcal/day', style: labelTextStyle),
+                  const Text('kcal/day', style: labelTextStyle),
                   Text(
                     information,
                     textAlign: TextAlign.center,
