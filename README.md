@@ -8,9 +8,3 @@
 
 ### Halaman Hasil
 ![Result Page](screenshots/result_page.png)
-
-## Teknologi yang digunakan
-- Flutter SDK
-- Dart
-- Font Awesome Flutter Icons
-- Custom Widget Components
